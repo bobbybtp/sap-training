@@ -16,12 +16,13 @@
         .sticky-bar { background: #fff; padding: 12px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
         .nav-links a { color: var(--primary); text-decoration: none; font-weight: 700; margin-right: 20px; font-size: 13px; text-transform: uppercase; }
-        .cta-btn { background: var(--secondary); color: white !important; padding: 8px 18px; border-radius: 4px; font-weight: 700; text-decoration: none; display: inline-block; }
+        .cta-btn { background: var(--secondary); color: white !important; padding: 8px 18px; border-radius: 4px; font-weight: 700; text-decoration: none; display: inline-block; transition: background 0.2s; }
         .main-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin: 30px auto; }
         .section { background: white; padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .section h2 { color: var(--primary); font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; margin-bottom: 20px; text-transform: uppercase; }
-        .syllabus-block { margin-bottom: 30px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 25px; }
-        .syllabus-block h3 { font-size: 16px; color: var(--secondary); margin-bottom: 15px; font-weight: 700; text-transform: uppercase; }
+        .section h2 { color: var(--primary); font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .syllabus-block { margin-bottom: 25px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 20px; }
+        .syllabus-block:last-child { border-bottom: none; padding-bottom: 0; }
+        .syllabus-block h3 { font-size: 16px; color: var(--secondary); margin-bottom: 12px; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
         .syllabus-subgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .subgrid-column { background: var(--light); padding: 15px; border-radius: 6px; border: 1px solid #f1f5f9; }
         .subgrid-column h4 { font-size: 14px; color: var(--primary); margin-bottom: 10px; font-weight: 700; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; text-transform: uppercase; }
@@ -29,40 +30,38 @@
         ul li { font-size: 13.5px; margin-bottom: 8px; color: #334155; padding-left: 18px; position: relative; line-height: 1.4; }
         ul li::before { content: "✔"; position: absolute; left: 0; color: var(--secondary); font-weight: bold; }
         .sidebar-card { background: white; border: 1px solid #e2e8f0; padding: 22px; border-radius: 8px; position: sticky; top: 85px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 25px; }
-        .sidebar-card h3 { font-size: 15px; color: var(--primary); margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; font-weight: 700; }
-        .price-row { background: var(--light); border-left: 4px solid var(--secondary); padding: 12px; margin-bottom: 12px; border-radius: 0 4px 4px 0; }
+        .sidebar-card h3 { font-size: 16px; color: var(--primary); margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; font-weight: 700; }
+        .price-row { background: var(--light); border-left: 4px solid var(--secondary); padding: 10px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
         .price-title { font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 700; }
-        .price-val { font-size: 18px; font-weight: 800; color: var(--secondary); }
+        .price-val { font-size: 17px; font-weight: 800; color: var(--secondary); }
         .bonus-box { background: var(--accent); border: 1px solid #fde68a; padding: 18px; border-radius: 6px; margin-top: 15px; }
-        .bonus-box h3 { color: #b45309; font-size: 14px; margin-bottom: 10px; font-weight: 700; }
-        .bonus-item { font-size: 13px; color: #78350f; margin-bottom: 8px; position: relative; padding-left: 15px; }
-        .bonus-item::before { content: "🎁"; position: absolute; left: 0; }
+        .bonus-box h3 { color: #b45309; font-size: 15px; margin-bottom: 8px; font-weight: 700; border: none; padding: 0; }
+        .bonus-item { font-size: 13px; color: #78350f; margin-bottom: 6px; line-height: 1.4; }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 6px; border: 1px solid #e2e8f0; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 35px 20px; font-size: 13.5px; border-top: 4px solid var(--primary); }
-        footer strong { color: white; }
         @media(max-width: 992px) { .main-layout { grid-template-columns: 1fr; } .syllabus-subgrid { grid-template-columns: 1fr; } .sidebar-card { position: relative; top: 0; } }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <span class="badge">Batch Starts Sept 7th, 2026</span>
-            <h1 style="margin-top: 12px;">Online Training: SAP Joule, Agentic AI, BTP & RAP</h1>
-            <p>Upskill your cloud architectural path with 45 hours of live, production-oriented project exercises led by an active MNC Senior Consultant.</p>
-            <a href="https://google.com" class="cta-btn" target="_blank">Register Now</a>
+            <span class="badge">Real-Time Oriented Training • Starts Sept 7th, 2026</span>
+            <h1 style="margin-top: 12px;">Master SAP Joule Agentic AI, BTP & RAP</h1>
+            <p>Transform your SAP career with trending AI & Cloud modules. 45 hours of technical deep-dives led by an active MNC Senior Consultant.</p>
+            <a href="https://google.com" class="cta-btn" target="_blank" style="padding: 10px 30px; font-size: 15px;">Click Here to Register Now</a>
         </div>
     </header>
     <div class="sticky-bar">
         <div class="container nav-flex">
-            <div class="nav-links"><a href="#curriculum">Curriculum</a><a href="#demo">Demo Class</a><a href="#instructor">Instructor Track</a></div>
-            <a href="https://wa.me" class="cta-btn" target="_blank" style="background:#25D366;">💬 WhatsApp Chat</a>
+            <div class="nav-links"><a href="#curriculum">Complete Curriculum</a><a href="#demo">Free Demo Class</a></div>
+            <a href="https://wa.me" class="cta-btn" target="_blank" style="background:#25D366;">💬 Open WhatsApp Chat</a>
         </div>
     </div>
     <div class="container main-layout">
         <div class="left-content">
             <div class="section" id="curriculum">
-                <h2 style="margin-bottom: 25px;">📋 Comprehensive Course Content (45-Hour Scope)</h2>
+                <h2 style="margin-bottom: 25px;">📋 Entire Course Syllabus Curriculum (45 Hours)</h2>
                 <!-- MODULE 1 -->
                 <div class="syllabus-block">
                     <h3>🚀 Module 1: SAP Joule & SAP Joule Agentic AI</h3>
@@ -85,14 +84,13 @@
                                 <li>Creating executable Actions in SAP Build and configuring standard Joule Skills</li>
                                 <li>Launching the Joule assistant interface and validating targeted Skills testing</li>
                                 <li>Creating custom Joule projects explicitly designed for Agentic AI setups</li>
-                                <li>Defining explicit Intents, entity parameters, and configuring pipeline Actions</li>
-                                <li>Designing interactive agent responses and releasing for Agent AI</li>
-                                <li>Connecting your corporate backend architectures (Action Projects)</li>
+                                <li>Define Intent and Add Parameters for custom agent projects</li>
+                                <li>Design Response, Test and Release for Agent AI</li>
+                                <li>Connect Your Backend (Create an Action Project)</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
                 <!-- MODULE 2 -->
                 <div class="syllabus-block">
                     <h3>📄 Module 2: SAP Document AI Suite</h3>
@@ -100,23 +98,22 @@
                         <div class="subgrid-column">
                             <h4>Workspace Management</h4>
                             <ul>
-                                <li>Introduction to SAP Document AI capabilities and use cases</li>
-                                <li>Exploring and configuring the unified SAP Document AI Workspace landscape</li>
-                                <li>Viewing workspace nodes and provisioning dedicated Client endpoints safely</li>
+                                <li>Introduction to SAP Document AI capabilities and architecture</li>
+                                <li>Explore the SAP Document AI Workspace dashboard landscape</li>
+                                <li>View Workspace and Create a Client configuration layer</li>
                             </ul>
                         </div>
                         <div class="subgrid-column">
                             <h4>Schema Engineering & Training</h4>
                             <ul>
-                                <li>Creating and activating specialized Extraction Schemas for data isolation</li>
-                                <li>Managing corporate Document AI Schemas and document variations</li>
-                                <li>Training extraction models natively using advanced Instant Learning pipelines</li>
-                                <li>Configuring secure Outbound Channels to deliver extracted data sets</li>
+                                <li>Create and Activate a Schema for Document Extraction</li>
+                                <li>Managing complex corporate Document AI Schemas mapping variations</li>
+                                <li>Train the model with advanced native Instant Learning pipelines</li>
+                                <li>Configure Outbound Channels to stream data output fields smoothly</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
                 <!-- MODULE 3 -->
                 <div class="syllabus-block">
                     <h3>💻 Module 3: Joule For Developers</h3>
@@ -124,18 +121,18 @@
                         <div class="subgrid-column">
                             <h4>ABAP & Architecture Generation</h4>
                             <ul>
-                                <li>What is Joule for Developers and its integration within active engineering IDEs</li>
-                                <li>Leveraging JOULE for ABAP Developers to accelerate production cycles</li>
-                                <li>Automating complete OData and RAP architecture generations</li>
+                                <li>What is Joule for Developers and installation setups</li>
+                                <li>JOULE for ABAP Developers workspace acceleration paths</li>
+                                <li>OData & RAP Architecture Generation automation routines</li>
                             </ul>
                         </div>
                         <div class="subgrid-column">
                             <h4>AI-Assisted Operations</h4>
                             <ul>
-                                <li>Automated Unit Test generation routines protecting production pipelines</li>
-                                <li>Utilizing AI modules to parse and explain complex ABAP code blocks and CDS definitions</li>
-                                <li>Interacting with the real-time Joule Developer Chat for structural assistance</li>
-                                <li>Configuring Predictive Code Completion systems inside developer toolsets</li>
+                                <li>Automated Unit Test Generation shielding production systems</li>
+                                <li>ABAP and CDS Explain modules parsing database logic tables</li>
+                                <li>Interacting with the real-time Joule Developer Chat interface</li>
+                                <li>Predictive Code Completion configurations inside developer frameworks</li>
                             </ul>
                         </div>
                     </div>
@@ -147,28 +144,27 @@
                         <div class="subgrid-column">
                             <h4>CDS Views Foundations & Grammar</h4>
                             <ul>
-                                <li>Introduction to ABAP Core Data Services (CDS) Views and architecture mapping</li>
-                                <li>Strict syntax compiler rules and layout parameters inside ABAP Development Tools (ADT)</li>
-                                <li>Developing advanced ABAP CDS Views Table Functions to optimize table lookups</li>
-                                <li>Basic expressions, conditional operations, and native built-in mathematical/string functions</li>
-                                <li>Deep analysis distinguishing performance mechanics between Joins and Associations</li>
-                                <li>Configuring Input Parameters inside ABAP CDS Views for user runtime inputs</li>
+                                <li>Introduction to ABAP CDS Views tracking SAP architectural evolution</li>
+                                <li>ABAP CDS Views Syntax Rules and strict tool compilation parameters</li>
+                                <li>Building specialized ABAP CDS Views Table Functions to map tables</li>
+                                <li>Basic Expressions and Operations with built-in system expressions</li>
+                                <li>Deep analysis highlighting differences between Associations and Joins</li>
+                                <li>Input Parameters configurations in ABAP CDS Views for runtime controls</li>
                             </ul>
                         </div>
                         <div class="subgrid-column">
-                            <h4>Advanced Associations & VDM Patterns</h4>
+                            <h4>Advanced Associations & Layouts</h4>
                             <ul>
-                                <li>Defining Associations and structuring internal elements of entity Associations</li>
-                                <li>Mastering Cardinality of Associations and strict evaluation rules</li>
-                                <li>Comprehensive, deep-dive breakdown of complex [M:N] Cardinality setups</li>
-                                <li>Creating layered ABAP CDS Views explicitly on top of nested Associations</li>
-                                <li>Building specialized ABAP CDS Views optimized for Value Help definitions and Case Statements</li>
-                                <li>Virtual Data Model (VDM) Strategy: Setting up Basic Views, Composite Views, and final Consumption Views</li>
+                                <li>Definition of Association & the underlying structural elements of Associations</li>
+                                <li>Cardinality of Association and strict mapping validation Rules</li>
+                                <li>Comprehensive, deep-dive breakdown of [M:N] Cardinality layout details</li>
+                                <li>Create ABAP CDS Views explicitly on top of nested Association boundaries</li>
+                                <li>Creating ABAP CDS Views for Value help Definitions and Case Statement workflows</li>
+                                <li>VDM (Virtual Data Model) layers: Basic View, Composite View, and final Consumption View</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
                 <!-- MODULE 5 -->
                 <div class="syllabus-block">
                     <h3>🏗️ Module 5: RAP & ABAP on Cloud (BTP & On-Premise)</h3>
@@ -176,39 +172,39 @@
                         <div class="subgrid-column">
                             <h4>Managed Lifecycles & Tool Setup</h4>
                             <ul>
-                                <li>Evolution paths tracking SAP Classic Programming to modern Cloud RESTful architectures</li>
-                                <li>Onboarding and provisioning a Free Trial Account onto the SAP BTP</li>
-                                <li>Installing, connecting, and configuring ABAP Development Tools (ADT) in Eclipse</li>
-                                <li>Onboarding onto the central SAP BTP Cloud Platform ABAP Environment Service</li>
-                                <li>Architectural rules separating Managed vs. Unmanaged transactional scenarios</li>
-                                <li>Implementing Managed Scenario Development Artifacts in RAP paired with Validations, Determinations, and Actions</li>
-                                <li>Building database tables, Service Definitions, Service Implementations, and Service Bindings</li>
-                                <li>Projecting Core Data Services, creating Projection layers, and declaring UI Annotations in Metadata Extension files</li>
-                                <li>Enforcing strict data access authorization rules across custom tables</li>
+                                <li>Onboarding Free Trial Account setups on SAP Cloud Platform (BTP)</li>
+                                <li>Setting and installing ABAP Development Tools (ADT) in Eclipse environments</li>
+                                <li>Onboard SAP Cloud Platform ABAP Environment Service endpoints cleanly</li>
+                                <li>What are Managed and Unmanaged Scenarios in modern enterprise frameworks</li>
+                                <li>Implement Managed Scenario Development Artifacts in RAP with Validations, Determinations, and Actions</li>
+                                <li>Creating Database Tables, Service Definitions, Service Implementations, and Service Bindings</li>
+                                <li>Developing Core Data Service layers and structuring Projection layers</li>
+                                <li>Adding Required UI Annotations inside dedicated Metadata Extension Files</li>
+                                <li>Enforcing strict system Authorization rules across data configurations</li>
                             </ul>
                         </div>
                         <div class="subgrid-column">
-                            <h4>Unmanaged Transactions & Extensions</h4>
+                            <h4>Unmanaged Transactions & Advanced Code</h4>
                             <ul>
-                                <li>Defining Business Object Behavior and mapping explicit Business Object Behavior projections</li>
-                                <li>Mastering Entity Manipulation Language (EML) syntax block definitions to control datasets</li>
-                                <li>Implementing the complete behavior of Business Objects mapped to standard CRUD Operations</li>
-                                <li>Robust error handling mechanics during data modifications and CRUD processing pipelines</li>
-                                <li>Technical analysis of locking master controls, system components, and Etag validations</li>
-                                <li>Troubleshooting, auditing, and debugging native SAP Fiori application data errors</li>
-                                <li>Implementing Feature Controls to enable or disable target actions dynamically across user screens</li>
-                                <li>Activating Draft Handling parameters to store ongoing screen work safely</li>
-                                <li>Custom Entity implementation blueprints utilizing CDS Custom Entities for data modeling</li>
-                                <li>Creating Query Implementation Classes to orchestrate custom filtering and payload limits</li>
-                                <li>Building Unmanaged Fiori List Report applications that call legacy backend BAPIs in On-Premise S/4HANA systems</li>
-                                <li>Consuming external APIs inside RAP architectures using Side-by-Side cloud extension setups</li>
-                                <li>Uploading and parsing file attachments natively inside RAP application screens</li>
-                                <li>Building utility actions to upload and map external Excel sheet datasets directly into RAP applications</li>
+                                <li>Defining Business Object Behavior and creating Object behavior projection layers</li>
+                                <li>Mastering Entity Manipulation Language (EML) blocks to control target actions</li>
+                                <li>Implementing Behavior of Business Objects complete with full CRUD Operations</li>
+                                <li>Error Handling protocols inside CRUD Operations to protect runtime channels</li>
+                                <li>Detailed components discussion: Etag parameters, Lock Master fields, and troubleshooting steps</li>
+                                <li>Troubleshooting the SAP Fiori App and auditing frontend errors safely</li>
+                                <li>Implementing Feature Controls to enable or disable actions dynamically on screens</li>
+                                <li>Enabling the Draft Handling features to capture user workspace entries safely</li>
+                                <li>Custom Entity Implementation utilizing CDS Custom Entities for backend data modeling</li>
+                                <li>Creating the Query Implementation Class to orchestrate custom code filters</li>
+                                <li>Unmanaged Transactions Behavior Fiori List Report App mapping parent and child relationships</li>
+                                <li>Implement Unmanaged Fiori List report App calling legacy BAPIs in On-Premise S/4HANA systems</li>
+                                <li>Hiding Tabs Dynamically in List Report Fiori Apps and processing Multi Selections</li>
+                                <li>Consume External APIs in RAP architectures using Side-by-Side Extensions blueprints</li>
+                                <li>Uploading file Attachments natively and uploading Excel Data into RAP Applications</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
                 <!-- MODULE 6 -->
                 <div class="syllabus-block">
                     <h3>🎨 Module 6: Fiori Elements & Standard Extensions</h3>
@@ -216,36 +212,33 @@
                         <div class="subgrid-column">
                             <h4>Standard S/4HANA Fiori Extensions</h4>
                             <ul>
-                                <li>Extending the Standard Fiori App "Manage Billing Documents" via CDS Custom Entities</li>
-                                <li>Extending the Standard Fiori App "Display Customer List" utilizing modern Fiori Elements paths</li>
-                                <li>Injecting custom, user-defined fields into the S/4HANA "Manage Purchase Order" standard application</li>
-                                <li>Developing robust web applications via SAP Business Application Studio (BAS) workspaces</li>
-                                <li>Creating safe Dev Spaces for SAP Fiori Apps inside the Business Technology Platform</li>
-                                <li>Developing Fiori apps consuming data from remote On-Premise installations via Cloud Connectors</li>
-                                <li>Deploying custom-developed RAP apps into live SAP Launchpad portals</li>
-                                <li>Debugging and building production builds via Business Application Studio pipelines</li>
+                                <li>Extending Standard Fiori App "Manage Billing Document" via custom entities data modeling</li>
+                                <li>Extending Standard Fiori App "Display Customer List" using Fiori Elements paths</li>
+                                <li>Adding Custom Fields to S/4HANA "Manage Purchase Order" Standard Fiori Application</li>
+                                <li>Develop Fiori Applications using Business Application Studio (BAS) and SAP Web IDE</li>
+                                <li>Create a Dev Space for SAP Fiori Apps with SAP Business Application Studio in BTP</li>
+                                <li>Develop SAP Fiori Apps consuming data from On-Premise systems via Cloud Connectors</li>
+                                <li>Develop Custom-Developed RAP Apps into live Launchpad Sites cleanly</li>
+                                <li>Debug and deploy Your SAP Fiori App to SAP Cloud Platform using BAS tool suites</li>
                             </ul>
                         </div>
                         <div class="subgrid-column">
-                            <h4>Overview Pages (OVP) & Analytical Layouts</h4>
+                            <h4>Overview Pages & Analytical Layouts</h4>
                             <ul>
-                                <li>Introduction to Overview Page Fiori Applications and visual design patterns</li>
-                                <li>Creating targeted CDS Models to populate distinct components inside OVP cards</li>
-                                <li>Building Analytical Cards utilizing real-time donut charts, list layouts, bar chart structures, and table elements</li>
-                                <li>Injecting UI annotations and consuming OVPs on SAP Web IDE and BAS environments</li>
-                                <li>Analytical List Page (ALP) Apps: Setting up KPI Cards, Visual Filters, Main Interactive Charts, and linked details tables</li>
-                                <li>List Report/Object Pages: Structuring Facets, Field Groups, and Line Items via annotations</li>
-                                <li>Developing Smart Business Service KPIs using the ABAP CDS Virtual Data Model (VDM) layer</li>
-                                <li>Generating standalone OData Services via CDS Views paired with Intent-Based Navigation rules</li>
-                                <li>Declaring Virtual Elements on projections and expanding applications with BOPF patterns</li>
-                                <li>Deep dive into classic Fiori structure: design principles, gateway layers, manifest definitions, properties, and data bindings</li>
-                                <li>Configuring Fiori Launchpad Designer structures (Semantic Objects, Actions, Tiles, Catalogs, Groups, and PFCG Roles)</li>
+                                <li>Introduction to Overview Page Fiori Applications and data view parameters</li>
+                                <li>Creating CDS Models to Consume in OVP applications for Analytical, List, Bar Chart, and Table Cards</li>
+                                <li>Adding respective UI Annotations and consuming OVPs on BAS and Web IDE</li>
+                                <li>Developing Analytical List Page Fiori Apps: KPI Cards, Visual Filters, Main Charts, and linked details Tables</li>
+                                <li>Developing List Report/Object Page elements: Facets, FieldGroups, and Line Items via annotations</li>
+                                <li>Developing Smart Business Service KPIs using ABAP CDS Virtual Data Model (VDM)</li>
+                                <li>Generating OData Services using ABAP CDS Views and Intent-Based Navigation setups</li>
+                                <li>Declaring Virtual Elements and extending standard applications with BOPF configurations</li>
+                                <li>Classic Fiori setup: architecture details, manifest bindings, Launchpad Designer, Tiles, Catalogs, Groups, and PFCG Roles</li>
                                 <li>Theme Designer configurations, application debugging, Space/Pages configurations, and section layouts</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
                 <!-- MODULE 7 -->
                 <div class="syllabus-block">
                     <h3>⚙️ Module 7: SAP Cloud Transport Management & CI/CD Pipelines</h3>
@@ -253,4 +246,74 @@
                         <div class="subgrid-column">
                             <h4>Cloud Transport Management</h4>
                             <ul>
-                                <li>What is SAP Cloud Transport Management and its integration benefits in BTP</li>
+                                <li>What is SAP Cloud Transport Management in BTP and its structural benefits</li>
+                                <li>Achieving absolute control of system modifications across cloud environments</li>
+                                <li>Setting up fully cloud-based transport paths to move various content types safely</li>
+                                <li>Modeling complex transport landscapes and complementation tracking with CI/CD approaches</li>
+                                <li>Flexibly handle imports, check deployment logs, and validate system changes</li>
+                            </ul>
+                        </div>
+                        <div class="subgrid-column">
+                            <h4>CI/CD Deployment Automations</h4>
+                            <ul>
+                                <li>What is Continuous Integration and Delivery (CI/CD) in cloud ecosystems</li>
+                                <li>Configure a complete automated CI/CD pipeline for the development of CAPM and SAP Fiori applications</li>
+                                <li>Integrate Business Application Studio workspaces straight to external GitHub repositories</li>
+                                <li>Pushing the CAPM project to GitHub and setting up webhook integration parameters</li>
+                                <li>Set Up GitHub to automate Continuous Integration and Delivery pipelines inside SAP BTP</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- YOUTUBE VIDEO SECTION -->
+            <div class="section" id="demo">
+                <h2>📺 Watch Free Introductory Demo Class</h2>
+                <div class="video-wrapper">
+                    <iframe src="https://youtube.com" title="SAP Joule RAP Training Demo" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- RIGHT PANEL SIDEBAR -->
+        <div class="right-sidebar">
+            <div class="sidebar-card">
+                <h3>💰 Course Fees & Tracks</h3>
+                <div class="price-row">
+                    <div class="price-title">Live Classes + 12-Month Access Server Backups</div>
+                    <div class="price-val">₹15,000 / $165</div>
+                </div>
+                <div class="price-row">
+                    <div class="price-title">Recorded Playbacks Vault Server Only</div>
+                    <div class="price-val">₹9,500 / $105</div>
+                </div>
+                <a href="https://google.com" class="cta-btn" target="_blank" style="display:block; text-align:center; margin-top:15px; padding:12px;">📝 Fill Enrollment Form</a>
+                <div class="bonus-box">
+                    <h3>🎁 Program Value Highlights Included:</h3>
+                    <div class="bonus-item">Real-Time Project Development in ABAP RAP after course completion.</div>
+                    <div class="bonus-item">Recording Sessions with View Access for a full 12 Months.</div>
+                    <div class="bonus-item">Shared sandbox practice server access availability.</div>
+                    <div class="bonus-item">Study Materials provided on ABAP RAP, Fiori, and VDM architectures.</div>
+                    <div class="bonus-item">Practical hands-on lab exercises assigned every single Friday.</div>
+                    <div class="bonus-item">FREE ABAP and OOPS ABAP recording video bundles provided.</div>
+                </div>
+            </div>
+            <div class="sidebar-card" id="instructor">
+                <h3>👨‍🏫 About Your Instructor</h3>
+                <p style="font-size: 13.5px; margin-bottom: 12px; color: #475569;"><strong>Bobby</strong> is an active Senior BTP, CAPM, SAPUI5, and RAP Architect working at a top global MNC company.</p>
+                <ul>
+                    <li style="font-size:13px; margin-bottom:4px;">⭐ 16+ Years Corporate Industry Footprint</li>
+                    <li style="font-size:13px; margin-bottom:4px;">🎓 4000+ Global Professionals Trained</li>
+                    <li style="font-size:13px; margin-bottom:4px;">📊 100+ Verified Student Recommendations</li>
+                </ul>
+                <a href="https://linkedin.com" target="_blank" style="color: var(--secondary); font-size: 13px; font-weight: bold; display: block; text-align: center; text-decoration: none; border: 1px solid var(--secondary); padding: 6px; border-radius: 4px; margin-top:12px;">🔗 Read My LinkedIn Recommendations</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:10px;"><strong>Have Registration Questions? Contact Me Directly:</strong> +91 8884473675 &nbsp;|&nbsp; <strong>Email:</strong> bobby.sapui5@gmail.com</p>
+            <p>© 2026 Bobby SAP Cloud Training Space. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
